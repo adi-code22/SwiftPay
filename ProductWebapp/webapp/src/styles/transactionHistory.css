@@ -1,0 +1,36 @@
+h1 {
+  text-align: center;
+  color: #005555;
+  size: 3em;
+}
+.transactionDiv {
+  margin-bottom: 0vh;
+  width: 100%;
+}
+.MuiDataGrid-cellContent {
+  font-size: 1.1em;
+  font-weight: lighter;
+  text-align: center;
+  align-items: center;
+}
+.MuiDataGrid-cell.MuiDataGrid-cell.MuiDataGrid-withBorderColor {
+  color: rgb(9, 0, 0);
+}
+.MuiDataGrid-columnHeader {
+  background-color: #005555;
+  color: white;
+  font-size: 1.1em;
+}
+
+.MuiSvgIcon-root.MuiDataGrid-sortIcon {
+  color: rgb(247, 245, 245);
+}
+.MuiDataGrid-toolbarContainer {
+  color: black;
+}
+.MuiButtonBase-root.MuiButton-root.MuiButton-text {
+  color: rgb(0, 0, 0);
+}
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeSmall {
+  color: rgb(255, 255, 255);
+}

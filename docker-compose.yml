@@ -1,0 +1,75 @@
+version: "2"
+services:
+  mysql:
+    image: mysql
+    container_name: mysql-container
+    hostname: localhost
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Chennai@123'
+      MYSQL_USERNAME: 'root'
+
+  api-gateway:
+    image: api-gateway
+    container_name: api-gateway-container
+    build: ./ApiGateway
+    hostname: localhost
+    network_mode: host
+    restart: always
+    depends_on:
+      - eureka-server
+
+  eureka-server:
+    image: eureka-server
+    container_name: eureka-server-container
+    build: ./EurekaServer
+    hostname: localhost
+    network_mode: host
+    restart: always
+    ports:
+      - 8761:8761
+
+  product-web-app:
+    image: product-web-app
+    container_name: product-web-app-container
+    build: ./ProductWebapp
+    hostname: localhost
+    network_mode: host
+    restart: always
+    depends_on:
+      - eureka-server
+
+  transaction-service:
+    image: transaction-service
+    container_name: transaction-service-container
+    build: ./Transaction-Service
+    hostname: localhost
+    network_mode: host
+    restart: always
+    depends_on:
+      - eureka-server
+      - mysql
+
+  user-service:
+    image: user-service
+    container_name: user-service-container
+    build: ./User-Service
+    hostname: localhost
+    network_mode: host
+    restart: always
+    depends_on:
+      - eureka-server
+      - mysql
+
+  bank-service:
+    image: bank-service
+    container_name: bank-service-container
+    build: ./Bank-Service
+    hostname: localhost
+    network_mode: host
+    restart: always
+    depends_on:
+      - eureka-server
+      - mysql

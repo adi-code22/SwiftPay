@@ -1,0 +1,10 @@
+{
+    "bank_details": [{
+        "bank_name": "HDFC",
+        "acc_no": "123456789101",
+        "c_acc_no": "123456789101",
+        "bank_branch": "chennai",
+        "acc_type":"savings",
+        "ifsc":"SBIN00345",
+        "Init_balance":"500000"
+    }]
